@@ -26,10 +26,10 @@ const Home = () => {
     let planeScale, planePosition;
     if (window.innerWidth < 768) {
       planeScale = [1.5, 1.5, 1.5];
-      planePosition = [0, 0, -1];
+      planePosition = [0, -1.5, 0];
     } else {
-      planeScale = [2, 2, 2];
-      planePosition = [0, 0, -1];
+      planeScale = [3, 3, 3];
+      planePosition = [0, -4, -4];
     }
     return [planeScale, planePosition];
   };
