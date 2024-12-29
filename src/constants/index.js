@@ -13,7 +13,6 @@ import {
   redux,
   sass,
   tailwindcss,
-  threads,
   typescript,
 } from "../assets/icons";
 import { saminRay, mihan, digiexpress } from "../assets/images";
@@ -143,19 +142,11 @@ export const projects = [
     link: "https://carpet-management.vercel.app",
   },
   {
-    iconUrl: threads,
-    theme: "Online mall",
-    name: "Full Stack Threads Clone",
+    iconUrl: pricewise,
+    theme: "btn-back-red",
+    name: "Online mall",
     description:
       "The project was about an online mall with 3D rooms. Created a custom dashboard and advocated on effective and functional React.js patterns.",
-    link: "",
-  },
-  {
-    iconUrl: threads,
-    theme: "Online mall",
-    name: "Full Stack Threads Clone",
-    description:
-      "The project was about an online mall with 3D rooms. Created a custom dashboard and advocated on effective and functional React.js patterns.",
-    link: "",
+    link: "/",
   },
 ];

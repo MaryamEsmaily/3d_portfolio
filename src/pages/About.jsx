@@ -1,5 +1,10 @@
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import ConnectWithMe from "../components/ConnectWithMe";
 import { experiences, skills } from "../constants";
-import { Link } from "react-router-dom";
+import "react-vertical-timeline-component/style.min.css";
 
 const About = () => {
   return (
@@ -12,14 +17,12 @@ const About = () => {
         </span>{" "}
         👋
       </h1>
-
       <div className="mt-5 flex flex-col gap-3 text-slate-500">
         <p>
           Frontend Developer based in Iran, specializing in technical education
           through hands-on learning and building applications.
         </p>
       </div>
-
       <div className="py-10 flex flex-col">
         <h3 className="subhead-text">My Skills</h3>
 
@@ -38,7 +41,6 @@ const About = () => {
           ))}
         </div>
       </div>
-
       <div className="py-16">
         <h3 className="subhead-text">Work Experience.</h3>
         <div className="mt-5 flex flex-col gap-3 text-slate-500">
@@ -48,49 +50,58 @@ const About = () => {
           </p>
         </div>
 
-        <div className="mt-12 flex flex-col gap-6">
-          {experiences.map((experience) => (
-            <div key={experience.company_name} className="flex flex-col gap-1">
-              <h3 className="text-black text-xl font-poppins font-semibold">
-                {experience.title}
-              </h3>
-              <p className="text-black-500 font-medium text-base">
-                {experience.company_name}
-              </p>
-              <div className="flex justify-center items-center w-full h-full">
-                <img
-                  src={experience.icon}
-                  alt={experience.company_name}
-                  className="w-3/4 h-3/4 object-contain"
-                />
-              </div>
-              <div>{experience.date}</div>
-              <ul className="list-disc ml-5 space-y-2">
-                {experience.points.map((point, index) => (
-                  <li
-                    key={`experience-point-${index}`}
-                    className="text-black-500/50 font-normal pl-1 text-sm"
+        <div className="mt-12">
+          <VerticalTimeline>
+            {experiences.map((experience) => (
+              <VerticalTimelineElement
+                key={experience.company_name}
+                date={experience.date}
+                iconStyle={{ background: experience.iconBg }}
+                icon={
+                  <div className="flex justify-center items-center w-full h-full">
+                    <img
+                      src={experience.icon}
+                      alt={experience.company_name}
+                      className="w-[90%] h-[90%] object-contain"
+                    />
+                  </div>
+                }
+                contentStyle={{
+                  borderBottom: "8px",
+                  borderStyle: "solid",
+                  borderBottomColor: experience.iconBg,
+                  boxShadow: "none",
+                }}
+              >
+                <div>
+                  <h3 className="text-black text-xl font-poppins font-semibold">
+                    {experience.title}
+                  </h3>
+                  <p
+                    className="text-black-500 font-medium text-base"
+                    style={{ margin: 0 }}
                   >
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                    {experience.company_name}
+                  </p>
+                </div>
+
+                <ul className="my-5 list-disc ml-5 space-y-2">
+                  {experience.points.map((point, index) => (
+                    <li
+                      key={`experience-point-${index}`}
+                      className="text-black-500/50 font-normal pl-1 text-sm"
+                    >
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </VerticalTimelineElement>
+            ))}
+          </VerticalTimeline>
         </div>
       </div>
-
       <hr className="border-slate-200" />
-
-      <div className="cta">
-        <p className="cta-text">
-          Have a project in mind? <br className="sm:block hidden" />
-          Let’s build something together!
-        </p>
-        <Link to="/contact" className="btn">
-          Contact
-        </Link>
-      </div>
+      <ConnectWithMe />
     </section>
   );
 };
