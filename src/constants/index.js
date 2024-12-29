@@ -147,6 +147,5 @@ export const projects = [
     name: "Online mall",
     description:
       "The project was about an online mall with 3D rooms. Created a custom dashboard and advocated on effective and functional React.js patterns.",
-    link: "/",
   },
 ];
