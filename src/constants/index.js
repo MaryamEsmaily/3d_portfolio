@@ -1,6 +1,7 @@
 import {
   contact,
   css,
+  estate,
   git,
   github,
   html,
@@ -12,7 +13,9 @@ import {
   react,
   redux,
   sass,
+  snapgram,
   tailwindcss,
+  threads,
   typescript,
 } from "../assets/icons";
 import { saminRay, mihan, digiexpress } from "../assets/images";
@@ -134,8 +137,8 @@ export const socialLinks = [
 
 export const projects = [
   {
-    iconUrl: pricewise,
-    theme: "btn-back-red",
+    iconUrl: threads,
+    theme: "btn-back-yellow",
     name: "Carpet management",
     description:
       "The project was about carpet warehouse management. Developed management dashboard Using mock data",
@@ -147,5 +150,21 @@ export const projects = [
     name: "Online mall",
     description:
       "The project was about an online mall with 3D rooms. Created a custom dashboard and advocated on effective and functional React.js patterns.",
+  },
+  {
+    iconUrl: snapgram,
+    theme: "btn-back-pink",
+    name: "Portfolio",
+    description:
+      "The project was about an online mall with 3D rooms. Created a custom dashboard and advocated on effective and functional React.js patterns.",
+    link: "https://portfolio-ten-tawny-31.vercel.app/",
+  },
+  {
+    iconUrl: estate,
+    theme: "btn-back-blue",
+    name: "Real-Estate",
+    description:
+      "The project was about an online mall with 3D rooms. Created a custom dashboard and advocated on effective and functional React.js patterns.",
+    link: "https://real-state-henna.vercel.app/login",
   },
 ];
